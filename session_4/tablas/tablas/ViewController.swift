@@ -15,8 +15,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     var nombres: [String] = ["bere", "Jorge", "Julia", "Luis", "Pedro"]
     var carrito: [String] = []
-    
+    @IBOutlet weak var carritoLabel: UILabel!
     @IBOutlet weak var tablita: UITableView!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,7 +54,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let detailView = segue.destination as! DetailViewController //casteando vista genérica
         let myIndexPath = tablita.indexPathForSelectedRow
         detailView.item = nombres[myIndexPath!.row]
+        detailView.vc = self
         
+    }
+    
+    func refresh(){
+        carritoLabel.text = "\(carrito.count)"
     }
 
 

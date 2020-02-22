@@ -10,6 +10,8 @@ import UIKit
 
 class DetailViewController: UIViewController {
     var item:String = ""
+    var vc: ViewController?
+
     @IBOutlet weak var productName: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,6 +19,9 @@ class DetailViewController: UIViewController {
         productName.text = item
     }
     @IBAction func agregar(_ sender: UIButton){
+        vc!.carrito.append(item)
+        vc!.refresh()
+        dismiss(animated: true, completion: nil)
         
     }
     @IBAction func cancelar(_ sender: UIButton){
