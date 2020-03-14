@@ -1,0 +1,19 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'TracList' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for TracList
+  pod 'FeedKit'
+  target 'TracListTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'TracListUITests' do
+    # Pods for testing
+  end
+
+end
